@@ -1,0 +1,5 @@
+<div>
+  <textarea name="qrcodeText" [(ngModel)]="text" (change)="createQRcode()"></textarea>
+</div>
+<div #qrcodeArea id="qrcodeArea"></div>
+<button (click)="onClickCreate()">イラストロジック作成</button>

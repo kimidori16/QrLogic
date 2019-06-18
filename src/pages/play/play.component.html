@@ -1,0 +1,7 @@
+<h3>Present for you!!</h3>
+<div *ngIf="loaded">
+  <app-ilust-logic [puzzle]="puzzle"></app-ilust-logic>
+  <div class="button-area">
+    <button (click)="onClickAnswer()">回答</button>
+  </div>
+</div>

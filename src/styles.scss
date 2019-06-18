@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+$theme-color: #54c727;
+body {
+  background-color: #e5eeee;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  border: solid 1px transparent;
+  background-color: $theme-color;
+  color: #e5eeee;
+  padding: 5px;
+  min-width: 80px;
+
+  &:hover {
+    background-color: lighten($theme-color, 5%);
+  }
+
+  &:active {
+    background-color: darken($theme-color, 5%);
+  }
+}

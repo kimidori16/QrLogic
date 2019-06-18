@@ -1,0 +1,55 @@
+<table *ngIf="!completed" class="ilust-logic">
+  <thead>
+    <th></th>
+    <th>
+      <table class="ilust-logic-column">
+        <tr *ngFor="let col of columns">
+          <th
+            *ngFor="let item of col; index as columnIndex"
+            [class.hover-column]="isHoverColumn(columnIndex)"
+          >
+            {{ item }}
+          </th>
+        </tr>
+      </table>
+    </th>
+  </thead>
+  <tbody>
+    <th>
+      <table class="ilust-logic-row">
+        <tr *ngFor="let row of rows; index as rowIndex">
+          <th *ngFor="let item of row" [class.hover-row]="isHoverRow(rowIndex)">
+            {{ item }}
+          </th>
+        </tr>
+      </table>
+    </th>
+    <td>
+      <table class="ilust-logic-body" (mouseleave)="onMouseLeaveMass()">
+        <tr *ngFor="let row of answer; index as rowIndex">
+          <td
+            *ngFor="let mass of row; index as columnIndex"
+            [class.hover-column]="isHoverColumn(columnIndex)"
+            [class.hover-row]="isHoverRow(rowIndex)"
+            (click)="onClickMass(rowIndex, columnIndex)"
+            (contextmenu)="onRightClickMass(rowIndex, columnIndex)"
+            (mouseenter)="onMouseEnterMass(rowIndex, columnIndex)"
+          >
+            <app-ilust-mass [sts]="answer[rowIndex][columnIndex]">
+            </app-ilust-mass>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tbody>
+</table>
+<div *ngIf="completed" class="answer-area">
+  <table class="ilust-logic-answer-body">
+    <tr *ngFor="let row of answer; index as rowIndex">
+      <td *ngFor="let mass of row; index as columnIndex">
+        <app-ilust-mass [sts]="puzzle.ilust[rowIndex][columnIndex]">
+        </app-ilust-mass>
+      </td>
+    </tr>
+  </table>
+</div>

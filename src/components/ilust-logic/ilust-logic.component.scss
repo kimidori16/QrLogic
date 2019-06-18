@@ -1,0 +1,188 @@
+$border-color: #555;
+$border-solid-style: solid 1px $border-color;
+$border-dotted-style: dotted 1px $border-color;
+$mass-size: 24px;
+$answer-mass-size: 20px;
+$number-mass-color: #ddd;
+$hover-number-mass-color: #8dce73;
+$hover-mass-color: lighten(#8dce73, 20%);
+
+table {
+  font-size: 12px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+
+  &.ilust-logic {
+    empty-cells: show;
+    tr {
+      border-collapse: collapse;
+      border-spacing: 0;
+      line-height: 0;
+    }
+
+    th,
+    td {
+      line-height: 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    table {
+      display: inline-block;
+      border-collapse: collapse;
+      border-spacing: 0;
+      padding: 0;
+      margin: 0;
+
+      th,
+      td {
+        line-height: 0;
+        width: $mass-size;
+        height: $mass-size;
+      }
+
+      th {
+        border: $border-dotted-style;
+        background-color: $number-mass-color;
+        &.hover-column,
+        &.hover-row {
+          background-color: $hover-number-mass-color;
+        }
+        &.hover-column.hover-row {
+          background-color: $hover-number-mass-color;
+        }
+      }
+
+      td {
+        background-color: #fff;
+        &.hover-column,
+        &.hover-row {
+          background-color: $hover-mass-color;
+        }
+        &.hover-column.hover-row {
+          background-color: $hover-number-mass-color;
+        }
+      }
+
+      &.ilust-logic-column {
+        th {
+          &:first-child {
+            border-left: $border-solid-style;
+          }
+          &:last-child {
+            border-right: $border-solid-style;
+          }
+
+          &:nth-child(5n):not(:last-child) {
+            border-right: $border-solid-style;
+          }
+        }
+        tr {
+          &:first-child {
+            th {
+              border-top: $border-solid-style;
+            }
+          }
+          &:last-child {
+            th {
+              border-bottom: $border-solid-style;
+            }
+          }
+        }
+      }
+
+      &.ilust-logic-row {
+        th {
+          &:first-child {
+            border-left: $border-solid-style;
+          }
+          &:last-child {
+            border-right: $border-solid-style;
+          }
+        }
+        tr {
+          &:first-child {
+            th {
+              border-top: $border-solid-style;
+            }
+          }
+          &:last-child {
+            th {
+              border-bottom: $border-solid-style;
+            }
+          }
+          &:nth-child(5n):not(:last-child) {
+            th {
+              border-bottom: $border-solid-style;
+            }
+          }
+        }
+      }
+
+      &.ilust-logic-body {
+        td {
+          border: $border-dotted-style;
+          &:first-child {
+            border-left: $border-solid-style;
+          }
+          &:last-child {
+            border-right: $border-solid-style;
+          }
+          &:nth-child(5n):not(:last-child) {
+            border-right: $border-solid-style;
+          }
+        }
+        tr {
+          &:first-child {
+            td {
+              border-top: $border-solid-style;
+            }
+          }
+          &:last-child {
+            td {
+              border-bottom: $border-solid-style;
+            }
+          }
+          &:nth-child(5n):not(:last-child) {
+            td {
+              border-bottom: $border-solid-style;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.ilust-logic-answer-body {
+    empty-cells: show;
+    tr {
+      border-collapse: collapse;
+      border-spacing: 0;
+      line-height: 0;
+    }
+
+    td {
+      line-height: 0;
+      width: $answer-mass-size;
+      height: $answer-mass-size;
+      border-collapse: collapse;
+      border-spacing: 0;
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+  }
+}
+
+div {
+  &.answer-area {
+    display: inline-block;
+    padding: 20px;
+    background-color: #fff;
+  }
+}
